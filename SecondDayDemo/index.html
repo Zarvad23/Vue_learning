@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Компоненты</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+<div id="app">
+  <div class="container py-5">
+    <h2 class="mb-5 text-center">Компоненты</h2>
+
+    <section class="py-3">
+      <h3 class="mb-3">Счетчик</h3>
+
+      <div class="d-flex">
+        <counter></counter>
+        <counter></counter>
+      </div>
+    </section>
+
+    <section class="py-3">
+      <h3 class="mb-3">Карточка</h3>
+
+      <div class="row">
+        <div class="col-4">
+          <card title="Карточка 1">
+            <template v-slot:controls>
+              <button class="btn btn-sm btn-primary">Дублировать</button>
+            </template>
+            <h5>Alias</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam deserunt, doloribus ea eos ex
+            excepturi fuga illum impedit magni maxime nisi non officia rerum, sunt temporibus ut velit voluptas.
+          </p>
+
+          <h5>Eligendi</h5>
+          <p>
+            Eligendi natus qui voluptas. Asperiores aspernatur doloremque earum expedita maiores obcaecati, officiis
+            pariatur quas, ratione recusandae repudiandae saepe sequi sunt ut velit?
+          </p>
+
+          </card>
+        </div>
+
+        <div class="col-4">
+          <card title="Карточка 2">
+            <template v-slot:controls>
+              <button class="btn btn-sm btn-danger">Удалить</button>
+            </template>
+
+            <h5>Тело второй карточки</h5>
+          </card>
+        </div>
+
+        <div class="col-4">
+          <card title="Карточка 3">
+            <template v-slot:controls>
+              <button class="btn btn-sm btn-primary">Дублировать</button>
+              <button class="btn btn-sm btn-danger">Удалить</button>
+            </template>
+
+
+            123
+          </card>
+        </div>
+      </div>
+    </section>
+    <section class="py-3">
+      <h3 class="mb-3">Динамические компоненты</h3>
+
+      <div>
+        <button class="btn btn-primary" @click="currentPage = 'pageIndex'">Открыть главную</button>
+        <button class="btn btn-primary" @click="currentPage = 'pageContact'">Открыть контакты</button>
+      </div>
+
+      <component :is="currentPage"></component>
+    </section>
+  </div>
+</div>
+
+<script src="assets/js/vue.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

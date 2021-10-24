@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Карточки</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+<div id="app">
+    <div class="container py-5">
+        <h2 class="mb-5 text-center">Карточки</h2>
+
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4" :class="{'order-1' : task.isCompleted}" v-for="task of tasks" :id="task.id">
+                <div :class="'card mb-3 ' + (task.isCompleted ? cardBgCompleted : cardBg)">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <span :class="'badge ' + (task.isCompleted ? categoryComplete : categoryUncomplete) + ' mb-3'">{{ task.category }}</span>
+                            <input type="checkbox" class="form-check-input" v-model="task.isCompleted">
+                        </div>
+                        <h5 class="card-title">{{ task.name }}</h5>
+                        <p class="card-text">{{ task.description }}</p>
+                        <ul v-for="subtusk of task.subtasks" class="card-text">
+                            <li>{{ subtusk.name }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/vue.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

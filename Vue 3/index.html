@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vue 3</title>
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+
+<div id="app">
+	
+	{{ message }}
+	<button class="btn btn-primary" @click="showMessage = !showMessage">Показать</button>
+
+	<div v-if="showMessage" class="alert alert-success">V-if работает</div>
+</div>
+	<script src="assets/js/vue.global.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
+</html>

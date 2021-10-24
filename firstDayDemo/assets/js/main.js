@@ -9,6 +9,20 @@ let app = new Vue({
 			textarea: null,
 			checkboxes: [],
 			select: null
+		},
+		demoInput: {
+			disabled: false,
+			placeholder: "Новый placeholder",
+			classes: []
+		},
+		showMessages: true
+	},
+	methods: {
+		ClickByButton () {
+			alert('Нажата кнопка')
+		},
+		formSubmitted () {
+			alert('Вы отправили форму')
 		}
 	}
 })
